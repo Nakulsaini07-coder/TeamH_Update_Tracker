@@ -112,7 +112,7 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation code */}
           <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
             {navLinks.map((link, index) => {
               const Icon = link.icon;
@@ -133,7 +133,7 @@ const Header = () => {
             })}
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button code */}
           <button
             className="lg:hidden p-2 rounded-xl glass-effect hover:bg-white/10 transition-all duration-300 text-secondary-enhanced hover:text-blue-400"
             onClick={() => setMenuOpen(!menuOpen)}
