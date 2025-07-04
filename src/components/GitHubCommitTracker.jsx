@@ -176,7 +176,7 @@ const GitHubCommitTracker = ({
 
   return (
     <section id="github-commits" className="section-spacing bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden">
-      {/* Background decorative elements */}
+      {/* Background decorative */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-32 right-32 w-64 h-64 bg-green-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-32 left-32 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
@@ -210,7 +210,7 @@ const GitHubCommitTracker = ({
 
                 return (
                   <div key={repoKey} className="transition-all duration-200">
-                    {/* Repository Header */}
+                    {/* Repository Header    */}
                     <button
                       onClick={() => handleRepoClick(repoKey, repo.url)}
                       className="w-full px-6 py-6 flex items-center justify-between hover:bg-white/5 transition-colors duration-200 focus:outline-none focus:bg-white/5 group"

@@ -75,7 +75,7 @@ const VideoUpdateTracker = () => {
           />
         </motion.div>
 
-        {/* Video Container */}
+        {/* Video Container comment */}
         <motion.div 
           className="max-w-6xl mx-auto"
           initial={{ opacity: 0, scale: 0.9 }}

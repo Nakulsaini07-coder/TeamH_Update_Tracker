@@ -112,7 +112,7 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Desktop Navigation code */}
+          {/* Desktop Navigation  */}
           <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
             {navLinks.map((link, index) => {
               const Icon = link.icon;
