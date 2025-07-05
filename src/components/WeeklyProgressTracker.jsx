@@ -121,7 +121,7 @@ const WeeklyProgressTracker = () => {
       </div>
 
       <div className="container-responsive relative z-10">
-        {/* Section Header */}
+        {/* Section Header         */}
         <motion.div
           className="text-center mb-12 lg:mb-16"
           initial={{ opacity: 0, y: -20 }}

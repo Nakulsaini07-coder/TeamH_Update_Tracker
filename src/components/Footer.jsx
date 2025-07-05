@@ -129,7 +129,7 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Social page */}
+          {/* Social*/}
           <motion.div variants={itemVariants}>
             <h3 className="text-xl font-bold mb-6 text-enhanced border-b border-white/20 pb-2">
               Follow Us

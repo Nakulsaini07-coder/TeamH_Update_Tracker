@@ -133,7 +133,7 @@ const Header = () => {
             })}
           </nav>
 
-          {/* Mobile Menu Button code */}
+          {/* Mobile Menu Button*/}
           <button
             className="lg:hidden p-2 rounded-xl glass-effect hover:bg-white/10 transition-all duration-300 text-secondary-enhanced hover:text-blue-400"
             onClick={() => setMenuOpen(!menuOpen)}
