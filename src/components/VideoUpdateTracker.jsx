@@ -97,7 +97,7 @@ const VideoUpdateTracker = () => {
                 onPause={() => setIsPlaying(false)}
               >
                 <source src="/media/vid2.mp4" type="video/mp4" />
-                {/* Fallback content           */}
+                {/*         Fallback content           */}
                 <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
                   <motion.div 
                     className="text-center text-enhanced p-6 sm:p-8 md:p-12"

@@ -44,7 +44,7 @@ const UpdateCard = ({ update, member, index }) => {
 
     return null
   }
-  //  changes              
+  //           changes              
   return (
     <motion.div
       className="dark-card rounded-xl shadow-2xl p-6 sm:p-8 border border-white/10 overflow-hidden hover-lift"

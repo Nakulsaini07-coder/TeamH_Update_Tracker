@@ -69,7 +69,7 @@ const ProjectOverview = () => {
             </a>
           </motion.div>
 
-          {/* Stats*/}
+          {/*        Stats*/}
           <motion.div 
             variants={itemVariants}
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16 max-w-4xl mx-auto"

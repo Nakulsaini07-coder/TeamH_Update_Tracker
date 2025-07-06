@@ -114,7 +114,7 @@ const WeeklyProgressTracker = () => {
 
   return (
     <section id="weekly-progress" className="section-spacing bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-      {/* Background decorative*/}
+      {/*     Background decorative     */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-40 left-40 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-40 right-40 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
