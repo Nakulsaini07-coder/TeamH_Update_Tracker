@@ -1,3 +1,4 @@
+// Importing necessary libraries and components
 import React, { useState, useEffect } from "react";
 import {
   Menu,
@@ -12,9 +13,12 @@ import {
 } from "lucide-react";
 
 const Header = () => {
+  // State to manage the mobile menu toggle
   const [menuOpen, setMenuOpen] = useState(false);
+  // State to track if the user has scrolled down
   const [scrolled, setScrolled] = useState(false);
 
+  // Effect to handle scroll behavior and update the 'scrolled' state
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -23,6 +27,7 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Function to handle navigation clicks and smooth scrolling
   const handleNavClick = (e, sectionId) => {
     e.preventDefault();
     setMenuOpen(false);
@@ -30,7 +35,7 @@ const Header = () => {
     if (sectionId === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      const yOffset = -100;
+      const yOffset = -100; // Offset for fixed header
       const section = document.getElementById(sectionId);
       if (section) {
         const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
@@ -39,6 +44,7 @@ const Header = () => {
     }
   };
 
+  // Navigation links configuration
   const navLinks = [
     {
       name: "Home",
