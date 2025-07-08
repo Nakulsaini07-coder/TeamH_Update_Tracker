@@ -26,7 +26,9 @@ const TeamMemberCard = ({ member, index }) => {
         <p className="text-blue-400 font-semibold mb-4 text-base sm:text-lg">
           {role}
         </p>
-        <p className="text-secondary-enhanced mb-6 text-sm sm:text-base leading-relaxed">{bio}</p>
+        <p className="text-secondary-enhanced mb-6 text-sm sm:text-base leading-relaxed">
+          {bio}
+        </p>
         <div className="flex justify-start space-x-4">
           {social.linkedin && (
             <a
@@ -66,7 +68,10 @@ const TeamMemberCard = ({ member, index }) => {
 
 const TeamMembers = ({ members }) => {
   return (
-    <section id="team" className="section-spacing bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden">
+    <section
+      id="team"
+      className="section-spacing bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden"
+    >
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-40 right-40 w-80 h-80 bg-pink-500/10 rounded-full blur-3xl"></div>

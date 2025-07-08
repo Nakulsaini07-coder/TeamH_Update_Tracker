@@ -79,9 +79,7 @@ const ProgressBar = ({ percentage, label, delay = 0 }) => {
     <div className="mb-6">
       <div className="flex justify-between items-center mb-3">
         <span className="text-sm font-semibold text-enhanced">{label}</span>
-        <span className="text-sm font-bold text-blue-400">
-          {percentage}%
-        </span>
+        <span className="text-sm font-bold text-blue-400">{percentage}%</span>
       </div>
       <div className="w-full bg-slate-700 rounded-full h-3 overflow-hidden shadow-inner">
         <motion.div
@@ -113,8 +111,11 @@ const WeeklyProgressTracker = () => {
   const currentData = weeklyData[currentWeek];
 
   return (
-    <section id="weekly-progress" className="section-spacing bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-      {/*     Background decorative     */}
+    <section
+      id="weekly-progress"
+      className="section-spacing bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden"
+    >
+      {/* Background Decorative Section */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-40 left-40 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-40 right-40 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
@@ -199,7 +200,9 @@ const WeeklyProgressTracker = () => {
                       <h4 className="text-lg sm:text-xl font-semibold text-secondary-enhanced mb-3">
                         {week.title}
                       </h4>
-                      <p className="text-muted-enhanced leading-relaxed">{week.description}</p>
+                      <p className="text-muted-enhanced leading-relaxed">
+                        {week.description}
+                      </p>
                     </div>
 
                     {/* Overall Progress */}

@@ -25,7 +25,7 @@ const SearchBar = ({ searchTerm, onSearch, selectedMember, onMemberFilter, membe
             />
           </div>
         </div>
-        {/*           changes               */}
+        {/* Member Filter Dropdown */}
         <div className="min-w-[200px]">
           <select
             value={selectedMember}

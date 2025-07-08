@@ -80,7 +80,7 @@ const Updates = ({ updates, teamMembers }) => {
           onMemberFilter={handleMemberFilter}
           members={teamMembers}
         />
-        {/*          changes            */}
+        {/* Updates Rendering Section */}
         <AnimatePresence>
           {groupedUpdates.length > 0 ? (
             <motion.div

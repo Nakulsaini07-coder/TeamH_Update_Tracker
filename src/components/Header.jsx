@@ -18,7 +18,7 @@ const Header = () => {
   // State to track if the user has scrolled down
   const [scrolled, setScrolled] = useState(false);
 
-  // Effect to handle scroll behavior and update the 'scrolled' state
+  // Effect to track scroll position and update the 'scrolled' state accordingly
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
