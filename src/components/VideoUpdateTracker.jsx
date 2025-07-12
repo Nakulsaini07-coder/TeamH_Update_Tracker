@@ -1,12 +1,21 @@
-import React, { useState, useRef } from 'react';
-import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React, { useState, useRef } from "react";
+import { Play, Pause, Volume2, VolumeX } from "lucide-react";
+import { motion } from "framer-motion";
 
+/**
+ * VideoUpdateTracker Component
+ * Displays video updates with custom controls for play/pause and mute/unmute
+ * Includes animated UI elements and responsive design
+ */
 const VideoUpdateTracker = () => {
+  // State for video playback controls
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef(null);
 
+  /**
+   * Toggle play/pause state of the video
+   */
   const togglePlayPause = () => {
     const video = videoRef.current;
     if (video) {
@@ -19,6 +28,9 @@ const VideoUpdateTracker = () => {
     }
   };
 
+  /**
+   * Toggle mute/unmute state of the video
+   */
   const toggleMute = () => {
     const video = videoRef.current;
     if (video) {
@@ -28,7 +40,10 @@ const VideoUpdateTracker = () => {
   };
 
   return (
-    <section id="video-update" className="section-spacing bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden">
+    <section
+      id="video-update"
+      className="section-spacing bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden"
+    >
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-20 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
@@ -37,14 +52,14 @@ const VideoUpdateTracker = () => {
 
       <div className="container-responsive relative z-10">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-12 lg:mb-16"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <motion.h2 
+          <motion.h2
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 gradient-text leading-tight"
             animate={{
               backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
@@ -52,12 +67,12 @@ const VideoUpdateTracker = () => {
             transition={{
               duration: 5,
               repeat: Infinity,
-              ease: "linear"
+              ease: "linear",
             }}
           >
             Video Updates
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-lg sm:text-xl text-secondary-enhanced max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -66,7 +81,7 @@ const VideoUpdateTracker = () => {
           >
             Watch our latest development progress and project demonstrations
           </motion.p>
-          <motion.div 
+          <motion.div
             className="w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mt-6 rounded-full"
             initial={{ width: 0 }}
             whileInView={{ width: "6rem" }}
@@ -76,7 +91,7 @@ const VideoUpdateTracker = () => {
         </motion.div>
 
         {/* Video Container comment */}
-        <motion.div 
+        <motion.div
           className="max-w-6xl mx-auto"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -99,7 +114,7 @@ const VideoUpdateTracker = () => {
                 <source src="/media/vid2.mp4" type="video/mp4" />
                 {/*         Fallback Content Section           */}
                 <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-                  <motion.div 
+                  <motion.div
                     className="text-center text-enhanced p-6 sm:p-8 md:p-12"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -108,20 +123,30 @@ const VideoUpdateTracker = () => {
                     <div className="glass-effect rounded-2xl p-8 sm:p-10 md:p-12 border border-white/20 max-w-md mx-auto">
                       <motion.div
                         animate={{ rotate: 360 }}
-                        transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                        transition={{
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "linear",
+                        }}
                       >
                         <Play className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto mb-6 text-blue-400" />
                       </motion.div>
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 text-enhanced">Video Coming Soon</h3>
-                      <p className="text-base sm:text-lg md:text-xl text-secondary-enhanced mb-2">Latest dGit Development Progress</p>
-                      <p className="text-sm text-muted-enhanced">Add your video file to /public/media/vid2.mp4</p>
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 text-enhanced">
+                        Video Coming Soon
+                      </h3>
+                      <p className="text-base sm:text-lg md:text-xl text-secondary-enhanced mb-2">
+                        Latest dGit Development Progress
+                      </p>
+                      <p className="text-sm text-muted-enhanced">
+                        Add your video file to /public/media/vid2.mp4
+                      </p>
                     </div>
                   </motion.div>
                 </div>
               </video>
-              
+
               {/* Video Controls Overlay */}
-              <motion.div 
+              <motion.div
                 className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 initial={{ opacity: 0 }}
                 whileHover={{ opacity: 1 }}
@@ -135,7 +160,11 @@ const VideoUpdateTracker = () => {
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                     >
-                      {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+                      {isMuted ? (
+                        <VolumeX className="w-5 h-5" />
+                      ) : (
+                        <Volume2 className="w-5 h-5" />
+                      )}
                     </motion.button>
                     <motion.button
                       onClick={togglePlayPause}
@@ -144,7 +173,11 @@ const VideoUpdateTracker = () => {
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                     >
-                      {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
+                      {isPlaying ? (
+                        <Pause className="w-5 h-5" />
+                      ) : (
+                        <Play className="w-5 h-5" />
+                      )}
                     </motion.button>
                   </div>
                 </div>

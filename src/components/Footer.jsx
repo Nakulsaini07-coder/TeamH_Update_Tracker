@@ -12,7 +12,7 @@ const Footer = () => {
       icon: <FaLinkedin />,
       href: "https://www.linkedin.com/in/nakul-saini-4ba67328a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       label: "LinkedIn",
-    },
+    }, 
     {
       icon: <FaTwitter />,
       href: "https://x.com/Nakulsaini07?t=DlrG2gyPWg4H_480wg9REw&s=08",

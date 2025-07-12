@@ -2,6 +2,11 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Calendar, GitBranch } from "lucide-react";
 
+/**
+ * Custom hook to handle responsive design based on media queries
+ * @param {string} query - The media query to match against
+ * @returns {boolean} - Whether the media query matches
+ */
 function useMediaQuery(query) {
   const [matches, setMatches] = useState(window.matchMedia(query).matches);
   useEffect(() => {
@@ -13,6 +18,10 @@ function useMediaQuery(query) {
   return matches;
 }
 
+/**
+ * Static data for weekly progress
+ * TODO: Replace with data fetched from database
+ */
 const weeklyData = [
   {
     week: 1,
@@ -64,6 +73,13 @@ const weeklyData = [
   },
 ];
 
+/**
+ * Component for rendering progress bars with animation
+ * @param {Object} props - Component props
+ * @param {number} props.percentage - Completion percentage (0-100)
+ * @param {string} props.label - Label for the progress bar
+ * @param {number} props.delay - Animation delay in milliseconds
+ */
 const ProgressBar = ({ percentage, label, delay = 0 }) => {
   const [animatedPercentage, setAnimatedPercentage] = useState(0);
 
@@ -93,15 +109,26 @@ const ProgressBar = ({ percentage, label, delay = 0 }) => {
   );
 };
 
+/**
+ * WeeklyProgressTracker Component
+ * Displays weekly development progress with animated progress bars
+ * and responsive layout for different screen sizes
+ */
 const WeeklyProgressTracker = () => {
   const [currentWeek, setCurrentWeek] = useState(0);
   const isMobile = useMediaQuery("(max-width: 640px)");
   const isTablet = useMediaQuery("(max-width: 1024px)");
 
+  /**
+   * Navigate to the next week
+   */
   const nextWeek = () => {
     setCurrentWeek((prev) => (prev + 1) % weeklyData.length);
   };
 
+  /**
+   * Navigate to the previous week
+   */
   const prevWeek = () => {
     setCurrentWeek(
       (prev) => (prev - 1 + weeklyData.length) % weeklyData.length

@@ -17,10 +17,10 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   // State to track if the user has scrolled down
   const [scrolled, setScrolled] = useState(false);
-
+ 
   // Effect to track scroll position and update the 'scrolled' state accordingly
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = () => { 
       setScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);

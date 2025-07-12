@@ -1,29 +1,44 @@
-import { motion } from 'framer-motion'
-import { FaUser } from 'react-icons/fa'
+import { motion } from "framer-motion";
+import { FaUser } from "react-icons/fa";
 
+/**
+ * UpdateCard Component
+ * Displays individual team member updates with optional media content
+ *
+ * @param {Object} props - Component props
+ * @param {Object} props.update - The update data to display
+ * @param {Object} props.member - Team member information
+ * @param {number} props.index - Index for staggered animations
+ */
 const UpdateCard = ({ update, member, index }) => {
-  const { content, date, media } = update
+  const { content, date, media } = update;
 
+  /**
+   * Renders appropriate media content based on type (image/video)
+   * @returns {JSX.Element|null} - The media component or null if no media
+   */
   const renderMedia = () => {
-    if (!media) return null
+    if (!media) return null;
 
-    if (media.type === 'image') {
+    if (media.type === "image") {
       return (
         <div className="mt-6 rounded-lg overflow-hidden max-w-lg mx-auto">
-          <img 
-            src={media.url} 
+          <img
+            src={media.url}
             alt={media.caption || "Update media"}
             className="w-full h-auto rounded-lg transform transition-transform duration-500 hover:scale-105 shadow-lg"
             loading="lazy"
           />
           {media.caption && (
-            <p className="text-sm text-secondary-enhanced mt-3 text-center font-medium">{media.caption}</p>
+            <p className="text-sm text-secondary-enhanced mt-3 text-center font-medium">
+              {media.caption}
+            </p>
           )}
         </div>
-      )
+      );
     }
 
-    if (media.type === 'video') {
+    if (media.type === "video") {
       return (
         <div className="mt-6 rounded-lg overflow-hidden max-w-lg mx-auto shadow-lg">
           <div className="relative pb-[56.25%] h-0">
@@ -36,14 +51,16 @@ const UpdateCard = ({ update, member, index }) => {
             />
           </div>
           {media.caption && (
-            <p className="text-sm text-secondary-enhanced mt-3 text-center font-medium">{media.caption}</p>
+            <p className="text-sm text-secondary-enhanced mt-3 text-center font-medium">
+              {media.caption}
+            </p>
           )}
         </div>
-      )
+      );
     }
 
-    return null
-  }
+    return null;
+  };
   // Main Update Card Component
   return (
     <motion.div
@@ -52,13 +69,13 @@ const UpdateCard = ({ update, member, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.1 }}
       viewport={{ once: true, margin: "-50px" }}
-      whileHover={{ y: -5, boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)' }}
+      whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)" }}
     >
       <div className="flex items-start">
         <div className="flex-shrink-0 mr-4 sm:mr-6">
           {member && member.photo ? (
-            <img 
-              src={member.photo} 
+            <img
+              src={member.photo}
               alt={member.name}
               className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover ring-2 ring-blue-400/30 shadow-lg"
               loading="lazy"
@@ -69,24 +86,28 @@ const UpdateCard = ({ update, member, index }) => {
             </div>
           )}
         </div>
-        
+
         <div className="flex-1">
-          <h4 className="text-lg sm:text-xl font-semibold text-enhanced mb-1">{update.memberName}</h4>
+          <h4 className="text-lg sm:text-xl font-semibold text-enhanced mb-1">
+            {update.memberName}
+          </h4>
           <p className="text-sm text-secondary-enhanced mb-4 font-medium">
-            {new Date(date).toLocaleDateString('en-US', { 
-              year: 'numeric', 
-              month: 'long', 
-              day: 'numeric' 
+            {new Date(date).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
             })}
           </p>
-          
-          <p className="text-secondary-enhanced mb-4 leading-relaxed text-base">{content}</p>
-          
+
+          <p className="text-secondary-enhanced mb-4 leading-relaxed text-base">
+            {content}
+          </p>
+
           {renderMedia()}
         </div>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default UpdateCard
+export default UpdateCard;

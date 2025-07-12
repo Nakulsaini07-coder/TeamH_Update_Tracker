@@ -18,7 +18,7 @@ const Updates = ({ updates, teamMembers }) => {
                             update.memberName.toLowerCase().includes(searchTerm.toLowerCase())
       
       const matchesMember = selectedMember === 'all' || update.memberName === selectedMember
-      
+       
       return matchesSearch && matchesMember
     })
   }, [updates, searchTerm, selectedMember])

@@ -17,7 +17,7 @@ const TeamMemberCard = ({ member, index }) => {
           src={photo}
           alt={name}
           className="object-cover rounded-full w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44 transition-transform duration-500 hover:scale-110 ring-4 ring-blue-400/30 shadow-2xl"
-        />
+        /> 
       </div>
       <div className="p-6 sm:p-8">
         <h3 className="text-xl sm:text-2xl font-bold mb-2 text-enhanced">

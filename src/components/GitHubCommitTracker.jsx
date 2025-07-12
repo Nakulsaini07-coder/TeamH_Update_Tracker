@@ -15,7 +15,7 @@ const GitHubCommitTracker = ({
       name: "Dgit",
       url: "https://github.com/Shubham-Singh-Shoora/Dgit---Decentralised-Github.git",
     },
-    {
+    { 
       name: "Dgit Update Tracker",
       url: "https://github.com/Nakulsaini07-coder/TeamH_Update_Tracker.git",
     },
