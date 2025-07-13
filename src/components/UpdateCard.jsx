@@ -16,7 +16,7 @@ const UpdateCard = ({ update, member, index }) => {
   /**
    * Renders appropriate media content based on type (image/video)
    * @returns {JSX.Element|null} - The media component or null if no media
-   */
+   */                                      
   const renderMedia = () => {
     if (!media) return null;
 

@@ -22,7 +22,7 @@ const Updates = ({ updates, teamMembers }) => {
       return matchesSearch && matchesMember
     })
   }, [updates, searchTerm, selectedMember])
-  
+                             
   const groupedUpdates = useMemo(() => {
     const groups = {}
     

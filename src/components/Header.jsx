@@ -18,7 +18,7 @@ const Header = () => {
   // State to track if the user has scrolled down
   const [scrolled, setScrolled] = useState(false);
  
-  // Effect to track scroll position and update the 'scrolled' state accordingly
+  // Effect to track scroll position and update the 'scrolled' state accordingly                            
   useEffect(() => {
     const handleScroll = () => { 
       setScrolled(window.scrollY > 20);
@@ -27,7 +27,7 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Function to handle navigation clicks and smooth scrolling
+  // Function to handle navigation clicks and smooth scrolling                         
   const handleNavClick = (e, sectionId) => {
     e.preventDefault();
     setMenuOpen(false);
@@ -35,7 +35,7 @@ const Header = () => {
     if (sectionId === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      const yOffset = -100; // Offset for fixed header
+      const yOffset = -100; // Offset for fixed header                   
       const section = document.getElementById(sectionId);
       if (section) {
         const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
@@ -44,7 +44,7 @@ const Header = () => {
     }
   };
 
-  // Navigation links configuration
+  // Navigation links configuration                      
   const navLinks = [
     {
       name: "Home",

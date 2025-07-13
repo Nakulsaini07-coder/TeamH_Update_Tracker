@@ -21,7 +21,7 @@ function useMediaQuery(query) {
 /**
  * Static data for weekly progress
  * TODO: Replace with data fetched from database
- */
+ */                             
 const weeklyData = [
   {
     week: 1,

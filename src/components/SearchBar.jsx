@@ -26,7 +26,7 @@ const SearchBar = ({
       transition={{ duration: 0.5 }}
     >
       <div className="flex flex-col md:flex-row gap-4">
-        {/* Search input with icon */}
+        {/* Search input with icon                      */}
         <div className="flex-grow">
           <div className="relative">
             <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">

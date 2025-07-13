@@ -23,7 +23,7 @@ const VideoUpdateTracker = () => {
         video.pause();
       } else {
         video.play();
-      }
+      }                      
       setIsPlaying(!isPlaying);
     }
   };

@@ -111,7 +111,7 @@ const GitHubCommitTracker = ({
           }
         }
       }
-
+            
       const uniqueCommits = [];
       const seen = new Set();
       for (const commit of allCommits) {
@@ -120,7 +120,7 @@ const GitHubCommitTracker = ({
           uniqueCommits.push(commit);
         }
       }
-
+                
       setCommits((prev) => ({ ...prev, [repoKey]: uniqueCommits }));
     } catch (error) {
       setErrors((prev) => ({
@@ -143,7 +143,7 @@ const GitHubCommitTracker = ({
       }
     }
   };
-
+                      
   const toggleCommitExpansion = (commitSha) => {
     setExpandedCommits((prev) => ({
       ...prev,

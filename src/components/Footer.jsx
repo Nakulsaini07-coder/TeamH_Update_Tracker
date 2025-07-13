@@ -27,7 +27,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-enhanced pt-16 pb-8 relative overflow-hidden">
-      {/* Background decorative elements */}
+      {/* Background decorative elements    */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
@@ -61,7 +61,7 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Quick Links */}
+          {/* Quick Links     */}
           <motion.div variants={itemVariants}>
             <h3 className="text-xl font-bold mb-6 text-enhanced border-b border-white/20 pb-2">
               Quick Links
@@ -102,7 +102,7 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Contact */}
+          {/* Contact    */}
           <motion.div variants={itemVariants}>
             <h3 className="text-xl font-bold mb-6 text-enhanced border-b border-white/20 pb-2">
               Contact
@@ -129,7 +129,7 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Social Links Section */}
+          {/* Social Links Section   */}
           <motion.div variants={itemVariants}>
             <h3 className="text-xl font-bold mb-6 text-enhanced border-b border-white/20 pb-2">
               Follow Us

@@ -25,7 +25,7 @@ const ProjectOverview = () => {
 
   return (
     <section className="section-spacing bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-      {/* Background decorative elements */}
+      {/* Background decorative elements                          */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
@@ -69,7 +69,7 @@ const ProjectOverview = () => {
             </a>
           </motion.div>
 
-          {/* Statistics Section */}
+          {/* Statistics Section                       */}
           <motion.div 
             variants={itemVariants}
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16 max-w-4xl mx-auto"
