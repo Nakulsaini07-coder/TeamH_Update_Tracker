@@ -69,7 +69,7 @@ const ProjectOverview = () => {
             </a>
           </motion.div>
 
-          {/* Statistics Section                       */}
+          {/* Statistics Section*/}
           <motion.div 
             variants={itemVariants}
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16 max-w-4xl mx-auto"
@@ -88,7 +88,7 @@ const ProjectOverview = () => {
                 </div>
               </div>
             ))}
-          </motion.div>
+          </motion.div>                
         </motion.div>
       </div>
     </section>
