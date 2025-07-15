@@ -52,7 +52,7 @@ const SearchBar = ({
             />
           </div>
         </div>
-        {/* Member Filter Dropdown             */}
+        {/* Member Filter Dropdown                    */}
         <div className="min-w-[200px]">
           <select
             value={selectedMember}

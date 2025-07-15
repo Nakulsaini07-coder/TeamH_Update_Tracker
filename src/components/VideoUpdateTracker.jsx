@@ -29,7 +29,7 @@ const VideoUpdateTracker = () => {
   };
 
   /**
-   * Toggle mute/unmute state of the video                                       
+   * Toggle mute/unmute state of the video                                                              
    */
   const toggleMute = () => {
     const video = videoRef.current;

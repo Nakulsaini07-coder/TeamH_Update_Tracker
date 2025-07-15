@@ -44,7 +44,7 @@ const Header = () => {
     }
   };
 
-  // Navigation links configuration                                         
+  // Navigation links configuration                                                  
   const navLinks = [
     {
       name: "Home",
