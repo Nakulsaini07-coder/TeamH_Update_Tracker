@@ -17,34 +17,39 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   // State to track if the user has scrolled down
   const [scrolled, setScrolled] = useState(false);
- 
-  // Effect to track scroll position and update the 'scrolled' state accordingly                            
+
+  // Effect to track scroll position and update the 'scrolled' state accordingly
   useEffect(() => {
-    const handleScroll = () => { 
+    const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Function to handle navigation clicks and smooth scrolling                         
+  // Function to handle navigation clicks and smooth scrolling
+  // This manages both in-page navigation and mobile menu closing
   const handleNavClick = (e, sectionId) => {
     e.preventDefault();
-    setMenuOpen(false);
+    setMenuOpen(false); // Close mobile menu when navigation occurs
 
     if (sectionId === "home") {
+      // Special case for home - scroll to top of page
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      const yOffset = -100; // Offset for fixed header                   
+      const yOffset = -100; // Offset to account for fixed header height
       const section = document.getElementById(sectionId);
       if (section) {
-        const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        // Calculate the exact scroll position with offset adjustment
+        const y =
+          section.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({ top: y, behavior: "smooth" });
       }
     }
   };
 
-  // Navigation links configuration                                                  
+  // Navigation links configuration
+  // Array of objects defining the main navigation structure of the application
   const navLinks = [
     {
       name: "Home",
@@ -131,7 +136,10 @@ const Header = () => {
                   target={link.external ? "_blank" : undefined}
                   rel={link.external ? "noopener noreferrer" : undefined}
                 >
-                  <Icon size={16} className="transition-transform duration-300 group-hover:scale-110" />
+                  <Icon
+                    size={16}
+                    className="transition-transform duration-300 group-hover:scale-110"
+                  />
                   <span className="whitespace-nowrap">{link.name}</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/10 to-purple-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                 </a>
@@ -165,9 +173,7 @@ const Header = () => {
         {/* Mobile Navigation */}
         <div
           className={`lg:hidden transition-all duration-500 ease-in-out ${
-            menuOpen
-              ? "max-h-96 opacity-100 pb-6"
-              : "max-h-0 opacity-0 pb-0"
+            menuOpen ? "max-h-96 opacity-100 pb-6" : "max-h-0 opacity-0 pb-0"
           } overflow-hidden`}
         >
           <nav className="flex flex-col space-y-2 pt-4 border-t border-white/10">
@@ -186,8 +192,18 @@ const Header = () => {
                   <span className="font-medium">{link.name}</span>
                   {link.external && (
                     <div className="ml-auto">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
                       </svg>
                     </div>
                   )}

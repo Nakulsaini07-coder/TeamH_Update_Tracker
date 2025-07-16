@@ -15,7 +15,7 @@ const GitHubCommitTracker = ({
       name: "Dgit",
       url: "https://github.com/Shubham-Singh-Shoora/Dgit---Decentralised-Github.git",
     },
-    { 
+    {
       name: "Dgit Update Tracker",
       url: "https://github.com/Nakulsaini07-coder/TeamH_Update_Tracker.git",
     },
@@ -111,7 +111,7 @@ const GitHubCommitTracker = ({
           }
         }
       }
-            
+
       const uniqueCommits = [];
       const seen = new Set();
       for (const commit of allCommits) {
@@ -120,7 +120,7 @@ const GitHubCommitTracker = ({
           uniqueCommits.push(commit);
         }
       }
-                
+
       setCommits((prev) => ({ ...prev, [repoKey]: uniqueCommits }));
     } catch (error) {
       setErrors((prev) => ({
@@ -143,7 +143,7 @@ const GitHubCommitTracker = ({
       }
     }
   };
-                      
+
   const toggleCommitExpansion = (commitSha) => {
     setExpandedCommits((prev) => ({
       ...prev,
@@ -151,13 +151,11 @@ const GitHubCommitTracker = ({
     }));
   };
 
+  // Loading skeleton UI component to display while fetching commit data
   const LoadingSkeleton = () => (
     <div className="space-y-4 mt-6">
       {[...Array(5)].map((_, i) => (
-        <div
-          key={i}
-          className="dark-card rounded-lg p-4 animate-pulse"
-        >
+        <div key={i} className="dark-card rounded-lg p-4 animate-pulse">
           <div className="flex items-start space-x-3">
             <div className="w-5 h-5 bg-slate-600 rounded"></div>
             <div className="flex-1 space-y-2">
@@ -175,15 +173,18 @@ const GitHubCommitTracker = ({
   );
 
   return (
-    <section id="github-commits" className="section-spacing bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden">
-      {/* Background decorative               */}
+    <section
+      id="github-commits"
+      className="section-spacing bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden"
+    >
+      {/* Background decorative elements - adding depth with blurred gradients */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-32 right-32 w-64 h-64 bg-green-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-32 left-32 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container-responsive relative z-10">
-        {/* Section Header           */}
+        {/* Section Header - Title and description for the GitHub commits section */}
         <div className="text-center mb-12 lg:mb-16">
           <div className="flex items-center justify-center gap-3 mb-6">
             <GitCommit className="w-8 h-8 text-green-400" />
@@ -253,7 +254,9 @@ const GitHubCommitTracker = ({
                                   Error loading commits
                                 </p>
                               </div>
-                              <p className="text-red-300 text-sm mt-1">{error}</p>
+                              <p className="text-red-300 text-sm mt-1">
+                                {error}
+                              </p>
                             </div>
                           </div>
                         )}
@@ -272,7 +275,8 @@ const GitHubCommitTracker = ({
                               {repoCommits.map((commit, commitIndex) => {
                                 const isExpanded = expandedCommits[commit.sha];
                                 const fullMessage = commit.commit.message;
-                                const truncatedMessage = truncateMessage(fullMessage);
+                                const truncatedMessage =
+                                  truncateMessage(fullMessage);
                                 const hasLongMessage =
                                   fullMessage.length > truncatedMessage.length;
 
@@ -321,7 +325,9 @@ const GitHubCommitTracker = ({
                                           <div className="flex items-center space-x-1">
                                             <Clock className="w-3 h-3" />
                                             <span>
-                                              {formatDate(commit.commit.author.date)}
+                                              {formatDate(
+                                                commit.commit.author.date
+                                              )}
                                             </span>
                                           </div>
                                           <div className="flex items-center space-x-1">
@@ -372,7 +378,9 @@ const GitHubCommitTracker = ({
             {repositories.length === 0 && (
               <div className="p-12 text-center text-muted-enhanced">
                 <GitCommit className="w-16 h-16 mx-auto mb-4 opacity-50" />
-                <p className="text-xl font-medium">No repositories configured</p>
+                <p className="text-xl font-medium">
+                  No repositories configured
+                </p>
                 <p className="text-sm mt-2">
                   Add repositories to track their commits
                 </p>

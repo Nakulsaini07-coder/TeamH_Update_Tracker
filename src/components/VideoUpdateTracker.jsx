@@ -9,12 +9,17 @@ import { motion } from "framer-motion";
  */
 const VideoUpdateTracker = () => {
   // State for video playback controls
+  // isPlaying: tracks whether video is currently playing
+  // isMuted: tracks whether video audio is muted
+  // videoRef: reference to the DOM video element for direct manipulation
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef(null);
 
   /**
    * Toggle play/pause state of the video
+   * Controls video playback by directly manipulating the video element API
+   * Updates UI state to match the actual video playback status
    */
   const togglePlayPause = () => {
     const video = videoRef.current;
@@ -23,13 +28,15 @@ const VideoUpdateTracker = () => {
         video.pause();
       } else {
         video.play();
-      }                      
+      }
       setIsPlaying(!isPlaying);
     }
   };
 
   /**
-   * Toggle mute/unmute state of the video                                                              
+   * Toggle mute/unmute state of the video
+   * Controls video audio by directly setting the muted property
+   * Updates UI state to reflect the current audio status
    */
   const toggleMute = () => {
     const video = videoRef.current;

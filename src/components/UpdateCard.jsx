@@ -14,12 +14,14 @@ const UpdateCard = ({ update, member, index }) => {
   const { content, date, media } = update;
 
   /**
-   * Renders appropriate media content based on type (image/video)                     
+   * Renders appropriate media content based on type (image/video)
+   * Handles different media types with appropriate UI containers and accessibility attributes
    * @returns {JSX.Element|null} - The media component or null if no media
-   */                                      
+   */
   const renderMedia = () => {
     if (!media) return null;
 
+    // Image media type handler - Displays responsive images with hover effects
     if (media.type === "image") {
       return (
         <div className="mt-6 rounded-lg overflow-hidden max-w-lg mx-auto">
@@ -27,7 +29,7 @@ const UpdateCard = ({ update, member, index }) => {
             src={media.url}
             alt={media.caption || "Update media"}
             className="w-full h-auto rounded-lg transform transition-transform duration-500 hover:scale-105 shadow-lg"
-            loading="lazy"
+            loading="lazy" // Performance optimization for images below the fold
           />
           {media.caption && (
             <p className="text-sm text-secondary-enhanced mt-3 text-center font-medium">
@@ -38,6 +40,7 @@ const UpdateCard = ({ update, member, index }) => {
       );
     }
 
+    // Video media type handler - Embeds videos with responsive iframe containers
     if (media.type === "video") {
       return (
         <div className="mt-6 rounded-lg overflow-hidden max-w-lg mx-auto shadow-lg">

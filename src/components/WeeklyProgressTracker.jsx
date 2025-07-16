@@ -1,5 +1,8 @@
+// Import React core and hooks for component state management
 import React, { useState, useEffect } from "react";
+// Import animation utilities from Framer Motion
 import { motion, AnimatePresence } from "framer-motion";
+// Import UI icons for navigation and section headers
 import { ChevronLeft, ChevronRight, Calendar, GitBranch } from "lucide-react";
 
 /**
@@ -20,8 +23,15 @@ function useMediaQuery(query) {
 
 /**
  * Static data for weekly progress
- * TODO: Replace with data fetched from database                                      
- */                             
+ * Structure:
+ * - week: Week number identifier
+ * - title: Title of the week's milestone
+ * - description: Brief summary of the week's focus
+ * - tasks: Array of task objects with label and percentage completion
+ * - overallProgress: Average percentage completion across all tasks
+ *
+ * TODO: Replace with data fetched from database
+ */
 const weeklyData = [
   {
     week: 1,

@@ -12,7 +12,7 @@ const Footer = () => {
       icon: <FaLinkedin />,
       href: "https://www.linkedin.com/in/nakul-saini-4ba67328a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       label: "LinkedIn",
-    }, 
+    },
     {
       icon: <FaTwitter />,
       href: "https://x.com/Nakulsaini07?t=DlrG2gyPWg4H_480wg9REw&s=08",
@@ -55,8 +55,9 @@ const Footer = () => {
                 </div>
               </div>
               <p className="text-secondary-enhanced mb-4 leading-relaxed">
-                A collaborative project tracking and management application built
-                with modern web technologies for seamless team coordination.
+                A collaborative project tracking and management application
+                built with modern web technologies for seamless team
+                coordination.
               </p>
             </div>
           </motion.div>
@@ -102,12 +103,13 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Contact    */}
+          {/* Contact Section - Email addresses for project inquiries */}
           <motion.div variants={itemVariants}>
             <h3 className="text-xl font-bold mb-6 text-enhanced border-b border-white/20 pb-2">
               Contact
             </h3>
             <div className="space-y-4">
+              {/* Project Lead Developer Contact */}
               <div className="flex items-center space-x-3">
                 <FaEnvelope className="text-blue-400 flex-shrink-0" />
                 <a
@@ -117,6 +119,7 @@ const Footer = () => {
                   nakullsaini07@gmail.com
                 </a>
               </div>
+              {/* Project Collaborator Contact */}
               <div className="flex items-center space-x-3">
                 <FaEnvelope className="text-blue-400 flex-shrink-0" />
                 <a
@@ -166,10 +169,8 @@ const Footer = () => {
         >
           <p>
             © {new Date().getFullYear()}{" "}
-            <span className="font-semibold gradient-text">
-              Team H Project
-            </span>
-            . All rights reserved.
+            <span className="font-semibold gradient-text">Team H Project</span>.
+            All rights reserved.
           </p>
         </motion.div>
       </div>

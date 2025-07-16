@@ -17,7 +17,7 @@ const TeamMemberCard = ({ member, index }) => {
           src={photo}
           alt={name}
           className="object-cover rounded-full w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44 transition-transform duration-500 hover:scale-110 ring-4 ring-blue-400/30 shadow-2xl"
-        /> 
+        />
       </div>
       <div className="p-6 sm:p-8">
         <h3 className="text-xl sm:text-2xl font-bold mb-2 text-enhanced">
@@ -66,15 +66,22 @@ const TeamMemberCard = ({ member, index }) => {
   );
 };
 
+/**
+ * TeamMembers Component
+ * Displays a responsive grid of team member cards with animations
+ * @param {Array} members - Array of team member objects containing profile information
+ */
 const TeamMembers = ({ members }) => {
   return (
     <section
       id="team"
       className="section-spacing bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden"
     >
-      {/* Background decorative elements           */}
+      {/* Background decorative elements - Colored blur effects for visual depth */}
       <div className="absolute inset-0 overflow-hidden">
+        {/* Pink gradient blur in top-right corner for visual interest */}
         <div className="absolute top-40 right-40 w-80 h-80 bg-pink-500/10 rounded-full blur-3xl"></div>
+        {/* Blue gradient blur in bottom-left corner for balanced composition */}
         <div className="absolute bottom-40 left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
       </div>
 

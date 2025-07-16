@@ -18,10 +18,10 @@ const ProjectOverview = () => {
       opacity: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
-      }
+        ease: "easeOut",
+      },
     },
-  }; 
+  };
 
   return (
     <section className="section-spacing bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
@@ -30,7 +30,7 @@ const ProjectOverview = () => {
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
       </div>
-      
+
       <div className="container-responsive relative z-10">
         <motion.div
           className="max-w-5xl mx-auto text-center"
@@ -47,14 +47,19 @@ const ProjectOverview = () => {
             </h2>
           </motion.div>
 
-          <motion.p 
+          <motion.p
             variants={itemVariants}
             className="text-lg sm:text-xl md:text-2xl text-secondary-enhanced mb-8 max-w-3xl mx-auto leading-relaxed"
           >
-            A comprehensive project tracking and management application built with modern web technologies for seamless collaboration and progress monitoring.
+            A comprehensive project tracking and management application built
+            with modern web technologies for seamless collaboration and progress
+            monitoring.
           </motion.p>
 
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
             <a
               href="#updates"
               className="btn-primary w-full sm:w-auto text-center px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
@@ -70,29 +75,35 @@ const ProjectOverview = () => {
           </motion.div>
 
           {/* Statistics Section*/}
-          <motion.div 
+          <motion.div
             variants={itemVariants}
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16 max-w-4xl mx-auto"
           >
+            {/* Project Statistics - Visual metrics displaying team size, update count, and commitment level */}
             {[
               { number: "6", label: "Team Members" },
               { number: "40+", label: "Updates" },
-              { number: "100%", label: "Commitment" }
+              { number: "100%", label: "Commitment" },
             ].map((stat, index) => (
-              <div key={index} className="glass-effect p-6 rounded-xl text-center hover-lift">
+              <div
+                key={index}
+                className="glass-effect p-6 rounded-xl text-center hover-lift"
+              >
+                {/* Statistic value with gradient styling */}
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text mb-2">
                   {stat.number}
                 </div>
+                {/* Statistic label with secondary text coloring */}
                 <div className="text-sm sm:text-base text-secondary-enhanced font-medium">
                   {stat.label}
                 </div>
               </div>
             ))}
-          </motion.div>                
+          </motion.div>
         </motion.div>
       </div>
     </section>
   );
-};           
+};
 
 export default ProjectOverview;

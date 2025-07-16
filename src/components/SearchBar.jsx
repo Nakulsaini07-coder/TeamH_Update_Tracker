@@ -43,6 +43,7 @@ const SearchBar = ({
                 ></path>
               </svg>
             </div>
+            {/* Search input field with real-time filtering */}
             <input
               type="text"
               value={searchTerm}
@@ -52,8 +53,9 @@ const SearchBar = ({
             />
           </div>
         </div>
-        {/* Member Filter Dropdown                    */}
+        {/* Member Filter Dropdown - Allows filtering updates by team member */}
         <div className="min-w-[200px]">
+          {/* Custom styled select dropdown with glass effect styling */}
           <select
             value={selectedMember}
             onChange={(e) => onMemberFilter(e.target.value)}
